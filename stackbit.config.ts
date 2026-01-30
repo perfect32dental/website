@@ -11,7 +11,8 @@ export default defineStackbitConfig({
       models: [
         {
           name: "Page",
-          type: "page",
+          type: "page", // This tells Stackbit it's a visual page
+          hideContent: true,
           urlPath: "/",
           filePath: "index.html",
           fields: [
