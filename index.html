@@ -1,71 +1,54 @@
 <!DOCTYPE html>
-<html lang="en" data-sb-object-id="index.html">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfect 32 Dental Clinic | Ambala</title>
+    <title>Perfect 32 Dental Clinic</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/glacial-indifference/index.min.css">
     <style>
         :root { --navy: #154161; --cream: #F9F9EE; }
-        h1, h2, h3, h4, .spartan { font-family: 'League Spartan', sans-serif; text-transform: uppercase; }
-        body, p, a { font-family: 'Glacial Indifference', sans-serif; }
-        .bento { background: white; border: 1px solid rgba(21, 65, 97, 0.1); transition: 0.3s; }
-        .bento:hover { transform: translateY(-5px); border-color: var(--navy); }
+        body { background-color: var(--cream); color: var(--navy); font-family: sans-serif; }
     </style>
 </head>
-<body class="bg-[#FDFDF7] text-[#154161]">
-    <nav class="fixed w-full z-50 top-0 bg-[#F9F9EE]/90 backdrop-blur-md border-b border-[#154161]/10 px-6 py-4">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <img src="logo.png" alt="Perfect 32" class="h-10 w-auto">
-            <div class="hidden md:flex gap-10 font-bold text-xs tracking-widest opacity-70">
-                <a href="#services">Services</a><a href="#tech">Tech</a><a href="#team">Team</a>
-            </div>
-            <a href="https://wa.me/918222853707" class="bg-[#154161] text-white px-6 py-2 rounded-full font-bold text-[10px] tracking-widest">BOOK NOW</a>
-        </div>
+<body data-sb-object-id="content.json">
+    <nav class="p-6 flex justify-between items-center bg-white/80 backdrop-blur-md sticky top-0 z-50">
+        <img src="logo.png" class="h-8">
+        <a href="https://wa.me/918222853707" class="bg-[#154161] text-white px-4 py-2 rounded-full text-xs font-bold">BOOK NOW</a>
     </nav>
 
-    <section class="pt-40 pb-20 px-6 bg-[#F9F9EE]">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-            <div>
-                <h1 data-sb-field-id="hero_title" class="text-6xl md:text-8xl font-black leading-[0.85] mb-8">ADVANCED <br><span class="opacity-30">DENTISTRY.</span></h1>
-                <p data-sb-field-id="hero_subtext" class="text-xl mb-10 opacity-80">We're bringing the most advanced dental care to Ambala. Best in class premium yet affordable healthcare.</p>
-                <a href="#services" class="bg-[#154161] text-white px-10 py-5 rounded-2xl font-black text-xs tracking-widest shadow-xl inline-block">VIEW SERVICES</a>
-            </div>
-            <div class="relative">
-                <img data-sb-field-id="hero_image" src="clinic_main.jpg" class="rounded-[80px_20px] shadow-2xl border-[16px] border-white w-full aspect-square object-cover" alt="Clinic Interior">
-                <div class="absolute -bottom-8 -left-8 bg-white p-8 rounded-3xl shadow-xl border border-slate-100">
-                    <p class="font-black text-3xl leading-none">24+ YEARS</p>
-                    <p class="text-[10px] font-bold uppercase tracking-widest opacity-40 mt-1">Clinical Experience</p>
-                </div>
-            </div>
+    <section class="p-12 max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div>
+            <h1 id="hero_title" data-sb-field-id="hero_title" class="text-7xl font-black mb-6"></h1>
+            <p id="hero_subtext" data-sb-field-id="hero_subtext" class="text-xl opacity-80 mb-8"></p>
+        </div>
+        <img src="clinic_main.jpg" class="rounded-3xl shadow-2xl">
+    </section>
+
+    <section class="bg-[#154161] text-white p-12 rounded-t-[50px] grid md:grid-cols-2 gap-8">
+        <div class="p-6 border border-white/10 rounded-2xl">
+            <h3 id="dr_rohit_name" data-sb-field-id="dr_rohit_name" class="text-2xl font-bold"></h3>
+            <p id="dr_rohit_bio" data-sb-field-id="dr_rohit_bio" class="opacity-60"></p>
+        </div>
+        <div class="p-6 border border-white/10 rounded-2xl">
+            <h3 id="dr_shallu_name" data-sb-field-id="dr_shallu_name" class="text-2xl font-bold"></h3>
+            <p id="dr_shallu_bio" data-sb-field-id="dr_shallu_bio" class="opacity-60"></p>
         </div>
     </section>
 
-    <section id="team" class="py-24 px-6 bg-[#154161] text-white rounded-[60px_60px_0_0]">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
-            <div class="flex gap-6 items-center bg-white/5 p-8 rounded-[40px] border border-white/10">
-                <img data-sb-field-id="dr_rohit_img" src="dr_rohit.jpg" class="w-32 h-32 rounded-2xl object-cover" alt="Dr. Rohit Batra">
-                <div>
-                    <h3 data-sb-field-id="dr_rohit_name" class="text-2xl font-black">Dr. Rohit Batra</h3>
-                    <p data-sb-field-id="dr_rohit_bio" class="text-xs uppercase tracking-widest text-slate-400">Implantology Specialist (Germany)</p>
-                </div>
-            </div>
-            <div class="flex gap-6 items-center bg-white/5 p-8 rounded-[40px] border border-white/10">
-                <img data-sb-field-id="dr_shallu_img" src="dr_shallu.jpg" class="w-32 h-32 rounded-2xl object-cover" alt="Dr. Shallu Batra">
-                <div>
-                    <h3 data-sb-field-id="dr_shallu_name" class="text-2xl font-black">Dr. Shallu Batra</h3>
-                    <p data-sb-field-id="dr_shallu_bio" class="text-xs uppercase tracking-widest text-slate-400">Smile Designing Specialist</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-[#F9F9EE] py-20 px-6 text-center border-t border-[#154161]/10">
-        <p data-sb-field-id="footer_address" class="font-bold">1179/7A, Amrit Nagar, Model Town, Ambala City</p>
-        <p class="mt-2 font-bold">+91-8222853707</p>
-        <div class="mt-8 opacity-50 text-xs uppercase tracking-widest">Stringent sterilization protocols observed.</div>
+    <footer class="p-12 text-center opacity-50 text-sm">
+        <p id="footer_address" data-sb-field-id="footer_address"></p>
     </footer>
+
+    <script>
+        // This script automatically fills the page with data from content.json
+        fetch('./content.json')
+            .then(response => response.json())
+            .then(data => {
+                Object.keys(data).forEach(key => {
+                    const el = document.getElementById(key);
+                    if (el) el.innerText = data[key];
+                });
+            });
+    </script>
 </body>
 </html>
