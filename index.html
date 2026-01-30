@@ -7,141 +7,71 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/glacial-indifference/index.min.css">
-    
     <style>
-        :root {
-            --brand-navy: #154161;
-            --brand-cream: #F9F9EE;
-        }
-        h1, h2, h3, h4, .font-spartan { font-family: 'League Spartan', sans-serif; text-transform: uppercase; }
+        :root { --navy: #154161; --cream: #F9F9EE; }
+        h1, h2, h3, h4, .spartan { font-family: 'League Spartan', sans-serif; text-transform: uppercase; }
         body, p, a { font-family: 'Glacial Indifference', sans-serif; }
-        
-        .bento-item { background: white; border: 1px solid rgba(21, 65, 97, 0.1); transition: all 0.3s ease; }
-        .bento-item:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(21, 65, 97, 0.08); border-color: var(--brand-navy); }
-        .glass-nav { background: rgba(249, 249, 238, 0.9); backdrop-filter: blur(10px); }
+        .bento { background: white; border: 1px solid rgba(21, 65, 97, 0.1); transition: 0.3s; }
+        .bento:hover { transform: translateY(-5px); border-color: var(--navy); }
     </style>
 </head>
 <body class="bg-[#FDFDF7] text-[#154161]">
-
-    <nav class="fixed w-full z-50 top-0 glass-nav border-b border-[#154161]/10">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="font-spartan text-2xl font-black tracking-tighter">
-                PERFECT <span class="text-slate-400">32</span>
+    <nav class="fixed w-full z-50 top-0 bg-[#F9F9EE]/90 backdrop-blur-md border-b border-[#154161]/10 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <img src="logo.png" alt="Perfect 32" class="h-10 w-auto">
+            <div class="hidden md:flex gap-10 font-bold text-xs tracking-widest opacity-70">
+                <a href="#services">Services</a><a href="#tech">Tech</a><a href="#team">Team</a>
             </div>
-            <div class="hidden md:flex gap-10 font-bold text-xs uppercase tracking-widest opacity-70">
-                <a href="#services" class="hover:text-black transition">Services</a>
-                <a href="#team" class="hover:text-black transition">Team</a>
-                <a href="#reviews" class="hover:text-black transition">Reviews</a>
-            </div>
-            <a href="https://wa.me/918222853707" class="bg-[#154161] text-white px-6 py-2 rounded-full font-bold text-[10px] tracking-widest hover:scale-105 transition-all shadow-lg">
-                BOOK APPOINTMENT
-            </a>
+            <a href="https://wa.me/918222853707" class="bg-[#154161] text-white px-6 py-2 rounded-full font-bold text-[10px] tracking-widest">BOOK NOW</a>
         </div>
     </nav>
 
     <section class="pt-40 pb-20 px-6 bg-[#F9F9EE]">
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
             <div>
-                <h1 class="text-6xl md:text-8xl font-black leading-[0.85] mb-8">
-                    ADVANCED <br><span class="opacity-30">DENTAL CARE.</span>
-                </h1>
-                <p class="text-xl mb-10 leading-relaxed max-w-md opacity-80">
-                    We're bringing the most advanced dental care to Ambala. We just want you to be healthy and smiling happily.
-                </p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="#services" class="bg-[#154161] text-white px-10 py-5 rounded-2xl font-black text-xs tracking-[0.2em] shadow-2xl">
-                        VIEW SERVICES
-                    </a>
-                </div>
+                <h1 class="text-6xl md:text-8xl font-black leading-[0.85] mb-8">ADVANCED <br><span class="opacity-30">DENTISTRY.</span></h1>
+                <p class="text-xl mb-10 opacity-80">We're bringing the most advanced dental care to Ambala[cite: 2]. Best in class premium yet affordable healthcare[cite: 10].</p>
+                <a href="#services" class="bg-[#154161] text-white px-10 py-5 rounded-2xl font-black text-xs tracking-widest shadow-xl inline-block">VIEW SERVICES</a>
             </div>
             <div class="relative">
-                <div class="rounded-[80px_20px] overflow-hidden shadow-2xl border-[16px] border-white">
-                    <img src="clinic_main.jpg" class="w-full aspect-square object-cover" alt="Perfect 32 Clinic">
-                </div>
+                <img src="clinic_main.jpg" class="rounded-[80px_20px] shadow-2xl border-[16px] border-white w-full aspect-square object-cover" alt="Clinic Interior">
                 <div class="absolute -bottom-8 -left-8 bg-white p-8 rounded-3xl shadow-xl border border-slate-100">
-                    <p class="font-spartan font-black text-3xl leading-none">24+ YEARS</p>
-                    <p class="text-[10px] font-bold uppercase tracking-widest opacity-40 mt-1 text-[#154161]">Experience & Expertise</p>
+                    <p class="font-black text-3xl leading-none">24+ YEARS</p>
+                    <p class="text-[10px] font-bold uppercase tracking-widest opacity-40 mt-1">Clinical Experience [cite: 11]</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="services" class="py-32 px-6">
+    <section id="tech" class="py-24 px-6">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl font-black mb-16">State of the Art Procedures</h2>
-            <div class="grid md:grid-cols-4 gap-6">
-                <div class="md:col-span-2 md:row-span-2 bento-item p-12 rounded-[40px] flex flex-col justify-end min-h-[400px]">
-                    <h3 class="text-3xl font-black mb-4">Diagnostics & Planning</h3>
-                    <p class="opacity-60 leading-relaxed">Equipped with In-House OPG & CBCT, 3D-Intra Oral Scanner, Digital Dental IO cam, and RVG for precise diagnosis.</p>
-                </div>
-                <div class="bento-item p-8 rounded-[40px]">
-                    <h4 class="font-black mb-2">Laser Dentistry</h4>
-                    <p class="text-sm opacity-60">Soft tissue Diode Laser and Laser Teeth Whitening.</p>
-                </div>
-                <div class="bento-item p-8 rounded-[40px] bg-[#154161] text-white">
-                    <h4 class="font-black mb-2 text-white">Implants</h4>
-                    <p class="text-sm opacity-60">Premium Dental Implants with Fibre-Optic Implant Motors.</p>
-                </div>
-                <div class="bento-item p-8 rounded-[40px]">
-                    <h4 class="font-black mb-2">Veneers</h4>
-                    <p class="text-sm opacity-60">CAD/CAM Fixed teeth & Veneers in just 72 hours.</p>
-                </div>
-                <div class="bento-item p-8 rounded-[40px]">
-                    <h4 class="font-black mb-2">Endodontics</h4>
-                    <p class="text-sm opacity-60">Single Visit Rotary Endodontics (RCT).</p>
-                </div>
+            <h2 class="text-4xl font-black mb-12">Clinic Technology [cite: 14]</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bento p-6 rounded-3xl text-center"><p class="font-bold">In House OPG & CBCT [cite: 13]</p></div>
+                <div class="bento p-6 rounded-3xl text-center"><p class="font-bold">3D Intra-Oral Scanner [cite: 13]</p></div>
+                <div class="bento p-6 rounded-3xl text-center"><p class="font-bold">Diode Laser [cite: 13]</p></div>
+                <div class="bento p-6 rounded-3xl text-center"><p class="font-bold">CAD/CAM Fixed Teeth [cite: 13]</p></div>
             </div>
         </div>
     </section>
 
-    <section id="team" class="py-32 px-6 bg-[#154161] text-white rounded-[60px_60px_0_0]">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-5xl font-black mb-20 text-center">Meet Our Team</h2>
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="flex flex-col md:flex-row gap-8 items-center bg-white/5 p-10 rounded-[40px] border border-white/10">
-                    <img src="dr_rohit.jpg" class="w-40 h-40 rounded-3xl object-cover grayscale" alt="Dr. Rohit Batra">
-                    <div>
-                        <h3 class="text-2xl font-black">Dr. Rohit Batra</h3>
-                        <p class="text-slate-400 font-bold text-xs uppercase tracking-widest mb-4">Certified Specialist in Implantology</p>
-                        <p class="text-sm opacity-60">DGOI Germany. Former Lecturer at BRS Dental College and Dental Surgeon at Civil Hospital.</p>
-                    </div>
-                </div>
-                <div class="flex flex-col md:flex-row gap-8 items-center bg-white/5 p-10 rounded-[40px] border border-white/10">
-                    <img src="dr_shallu.jpg" class="w-40 h-40 rounded-3xl object-cover grayscale" alt="Dr. Shallu Batra">
-                    <div>
-                        <h3 class="text-2xl font-black">Dr. Shallu Batra</h3>
-                        <p class="text-slate-400 font-bold text-xs uppercase tracking-widest mb-4">Specialist in Smile Designing</p>
-                        <p class="text-sm opacity-60">Certified specialist dedicated to aesthetic transformations and oral health.</p>
-                    </div>
-                </div>
+    <section id="team" class="py-24 px-6 bg-[#154161] text-white rounded-[60px_60px_0_0]">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
+            <div class="flex gap-6 items-center bg-white/5 p-8 rounded-[40px] border border-white/10">
+                <img src="dr_rohit.jpg" class="w-32 h-32 rounded-2xl object-cover" alt="Dr. Rohit Batra">
+                <div><h3 class="text-2xl font-black">Dr. Rohit Batra</h3><p class="text-xs uppercase tracking-widest text-slate-400">Implantology Specialist (Germany) [cite: 38]</p></div>
+            </div>
+            <div class="flex gap-6 items-center bg-white/5 p-8 rounded-[40px] border border-white/10">
+                <img src="dr_shallu.jpg" class="w-32 h-32 rounded-2xl object-cover" alt="Dr. Shallu Batra">
+                <div><h3 class="text-2xl font-black">Dr. Shallu Batra</h3><p class="text-xs uppercase tracking-widest text-slate-400">Smile Designing Specialist [cite: 36]</p></div>
             </div>
         </div>
     </section>
 
-    <section id="reviews" class="py-32 bg-white px-6">
-        <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-4xl font-black mb-12 italic leading-tight">"Certainly the best dental clinic in Ambala - highly experienced professionals with the most advanced treatment!"</h2>
-            <p class="font-bold uppercase tracking-widest text-xs">- Barbie Sharma (Patient from New Zealand)</p>
-        </div>
-    </section>
-
-    <footer class="bg-[#F9F9EE] py-24 px-6 border-t border-[#154161]/10">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-16">
-            <div>
-                <div class="font-spartan text-3xl font-black mb-6 text-[#154161]">PERFECT 32</div>
-                <p class="opacity-60 text-sm">Stringent protocols for sterilization & disinfection are strictly observed.</p>
-            </div>
-            <div>
-                <h4 class="font-black text-xs tracking-widest mb-6 opacity-40 uppercase">Find Us</h4>
-                <p class="font-bold">1179/7A, Amrit Nagar, Model Town, Ambala City.</p>
-                <p class="mt-2 font-bold">+91-8222853707</p>
-            </div>
-            <div class="flex flex-col gap-4">
-                <a href="https://wa.me/918222853707" class="bg-[#154161] text-white p-5 rounded-2xl text-center font-black text-xs tracking-widest">WHATSAPP BOOKING</a>
-                <a href="https://g.co/kgs/vqQjXQw" class="border border-[#154161] p-5 rounded-2xl text-center font-black text-xs tracking-widest">GOOGLE MAPS</a>
-            </div>
-        </div>
+    <footer class="bg-[#F9F9EE] py-20 px-6 text-center border-t border-[#154161]/10">
+        <p class="font-bold">1179/7A, Amrit Nagar, Model Town, Ambala City [cite: 84]</p>
+        <p class="mt-2 font-bold">+91-8222853707 [cite: 85]</p>
+        <div class="mt-8 opacity-50 text-xs uppercase tracking-widest">Stringent sterilization protocols observed[cite: 15, 82].</div>
     </footer>
-
 </body>
 </html>
