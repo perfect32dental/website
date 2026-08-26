@@ -15,7 +15,7 @@ window.CLINIC = {
   email:          "perfect32amb@gmail.com",
 
   /* WhatsApp number, international format, digits only, no "+".
-     The Google listing and grexa site both use this number. */
+     Confirmed by the clinic as the line that receives WhatsApp. */
   whatsapp: "918222853707",
 
   address: {
