@@ -8,9 +8,16 @@
   /* --- Mobile navigation ------------------------------------------------ */
   var nav = $("#navLinks"), burger = $("#burger");
   if (nav && burger) {
+    /* The backdrop must live INSIDE .site-head. That element is
+       position:sticky with z-index:100, so it forms a stacking context and
+       .nav-links' z-index:120 only ranks within it. A backdrop appended to
+       <body> at z-index:110 outranks the whole header and paints over the
+       drawer. Inside the header, the drawer (120) correctly sits above the
+       backdrop (110); it still covers the viewport because it is
+       position:fixed and the header no longer creates a containing block. */
     var backdrop = document.createElement("div");
     backdrop.className = "nav-backdrop";
-    document.body.appendChild(backdrop);
+    (document.querySelector(".site-head") || document.body).appendChild(backdrop);
 
     var closeBtn = document.createElement("button");
     closeBtn.className = "nav-close";

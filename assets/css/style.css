@@ -142,7 +142,7 @@ section{padding:clamp(3.5rem,8vw,6.5rem) 0}
   .nav-links a{padding:.9rem 1rem;font-size:1.05rem}
   .nav-cta{margin:.75rem 0 0}
   .nav-cta .btn{width:100%}
-  .nav-backdrop{position:fixed;inset:0;background:rgba(4,51,58,.45);z-index:110;
+  .nav-backdrop{position:fixed;inset:0;background:rgba(11,36,56,.22);z-index:110;
     opacity:0;pointer-events:none;transition:opacity .28s}
   .nav-backdrop.open{opacity:1;pointer-events:auto}
   .nav-close{position:fixed;top:1rem;right:1rem;z-index:130;display:none;
@@ -248,7 +248,7 @@ section{padding:clamp(3.5rem,8vw,6.5rem) 0}
 .gal img{width:100%;height:100%;object-fit:cover;transition:transform .35s}
 .gal figure:hover img{transform:scale(1.06)}
 .gal figcaption{position:absolute;inset:auto 0 0 0;padding:1.5rem .9rem .8rem;font-size:.85rem;
-  color:#fff;background:linear-gradient(transparent,rgba(4,51,58,.85))}
+  color:#fff;background:linear-gradient(transparent,rgba(11,36,56,.85))}
 .lightbox{position:fixed;inset:0;background:rgba(4,27,31,.94);z-index:200;display:none;
   place-items:center;padding:1.5rem}
 .lightbox.open{display:grid}
@@ -352,7 +352,7 @@ fieldset{border:none;margin:0 0 1.15rem;padding:0}
 
 /* Sticky mobile action bar ----------------------------------------------- */
 .mobile-bar{position:fixed;left:0;right:0;bottom:0;z-index:90;display:none;
-  background:#fff;border-top:1px solid var(--line);box-shadow:0 -4px 20px rgba(4,51,58,.1);
+  background:#fff;border-top:1px solid var(--line);box-shadow:0 -4px 20px rgba(11,36,56,.1);
   padding:.6rem .75rem calc(.6rem + env(safe-area-inset-bottom));gap:.5rem}
 .mobile-bar .btn{flex:1;padding:.85rem .5rem;font-size:.92rem}
 @media (max-width:760px){
