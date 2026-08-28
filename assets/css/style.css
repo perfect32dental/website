@@ -129,6 +129,10 @@ section{padding:clamp(3.5rem,8vw,6.5rem) 0}
 .burger svg{width:26px;height:26px}
 
 @media (max-width:940px){
+  /* backdrop-filter makes .site-head a containing block for position:fixed
+     descendants, which traps the drawer inside the header. Drop it on mobile
+     so .nav-links positions against the viewport instead. */
+  .site-head{backdrop-filter:none;background:#fff}
   .burger{display:inline-flex}
   .nav-links{position:fixed;inset:0 0 0 auto;width:min(84vw,340px);background:#fff;
     flex-direction:column;align-items:stretch;gap:.15rem;padding:5.5rem 1.25rem 2rem;
