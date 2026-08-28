@@ -122,9 +122,9 @@ section{padding:clamp(3.5rem,8vw,6.5rem) 0}
 /* display:block matters — as an inline element the vertical padding would not
    add to the line box, so each link's painted background bled ~22px over its
    neighbour and the current-page highlight covered the item above it. */
-.nav-links a{display:block;padding:.6rem .85rem;border-radius:var(--r-sm);text-decoration:none;
+.nav-links a:not(.btn){display:block;padding:.6rem .85rem;border-radius:var(--r-sm);text-decoration:none;
   color:var(--ink-2);font-weight:600;font-size:.96rem;transition:background .15s,color .15s}
-.nav-links a:hover{background:var(--navy-50);color:var(--navy-800)}
+.nav-links a:not(.btn):hover{background:var(--navy-50);color:var(--navy-800)}
 .nav-links a[aria-current="page"]{color:var(--navy-800);background:var(--navy-50)}
 .nav-cta{margin-left:.5rem}
 .burger{display:none;background:none;border:1px solid var(--line);border-radius:var(--r-sm);
@@ -142,7 +142,7 @@ section{padding:clamp(3.5rem,8vw,6.5rem) 0}
     box-shadow:var(--shadow-3);transform:translateX(100%);transition:transform .28s ease;
     overflow-y:auto;z-index:120;visibility:hidden}
   .nav-links.open{transform:none;visibility:visible}
-  .nav-links a{padding:.9rem 1rem;font-size:1.05rem}
+  .nav-links a:not(.btn){padding:.9rem 1rem;font-size:1.05rem}
   .nav-cta{margin:.75rem 0 0}
   .nav-cta .btn{width:100%}
   .nav-backdrop{position:fixed;inset:0;background:rgba(11,36,56,.22);z-index:110;
