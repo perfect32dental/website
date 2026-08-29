@@ -164,6 +164,7 @@
       badge.textContent = isOpen ? "Open now" : "Closed now";
       badge.style.color = isOpen ? "var(--ok)" : "var(--ink-3)";
     });
+    $$(".pulse-dot").forEach(function (dot) { dot.classList.toggle("closed", !isOpen); });
   }
 
   /* --- Scroll reveal ----------------------------------------------------- */
@@ -220,6 +221,7 @@
       pct = Math.max(0, Math.min(100, pct));
       baWrap.style.width = pct + "%";
       baHandle.style.left = pct + "%";
+      baSlider.setAttribute("aria-valuenow", Math.round(pct));
     };
 
     var updateFromEvent = function (e) {
@@ -253,6 +255,9 @@
     baSlider.setAttribute("tabindex", "0");
     baSlider.setAttribute("role", "slider");
     baSlider.setAttribute("aria-label", "Before and after comparison slider");
+    baSlider.setAttribute("aria-valuemin", "0");
+    baSlider.setAttribute("aria-valuemax", "100");
+    setSliderPos(50);
     baSlider.addEventListener("keydown", function (e) {
       var currentPct = parseFloat(baHandle.style.left) || 50;
       if (e.key === "ArrowLeft") { setSliderPos(currentPct - 5); e.preventDefault(); }
@@ -261,10 +266,15 @@
 
     // Case Tabs Switching
     var baTabs = $$(".ba-tab");
+    baTabs.forEach(function (t) { t.setAttribute("aria-pressed", String(t.classList.contains("active"))); });
     baTabs.forEach(function (tab) {
       tab.addEventListener("click", function () {
-        baTabs.forEach(function (t) { t.classList.remove("active"); });
+        baTabs.forEach(function (t) {
+          t.classList.remove("active");
+          t.setAttribute("aria-pressed", "false");
+        });
         tab.classList.add("active");
+        tab.setAttribute("aria-pressed", "true");
 
         var beforeSrc = tab.getAttribute("data-before");
         var afterSrc = tab.getAttribute("data-after");
@@ -293,24 +303,37 @@
   var reviewsTrack = $(".reviews-track");
   var prevBtn = $("#reviewsPrev"), nextBtn = $("#reviewsNext");
   if (reviewsTrack) {
+    /* Card width is min(370px, 86vw) plus the flex gap, so a fixed pixel step
+       lands mid-card on narrow screens and fights scroll-snap. Measure it. */
+    var step = function () {
+      var card = $$(".review-card", reviewsTrack).filter(function (c) { return c.offsetParent !== null; })[0];
+      if (!card) return reviewsTrack.clientWidth;
+      var gap = parseFloat(getComputedStyle(reviewsTrack).columnGap) || 0;
+      return card.getBoundingClientRect().width + gap;
+    };
     if (prevBtn) {
       prevBtn.addEventListener("click", function () {
-        reviewsTrack.scrollBy({ left: -340, behavior: "smooth" });
+        reviewsTrack.scrollBy({ left: -step(), behavior: "smooth" });
       });
     }
     if (nextBtn) {
       nextBtn.addEventListener("click", function () {
-        reviewsTrack.scrollBy({ left: 340, behavior: "smooth" });
+        reviewsTrack.scrollBy({ left: step(), behavior: "smooth" });
       });
     }
 
     // Review Filters
     var filterBtns = $$(".review-filter-btn");
     var reviewCards = $$(".review-card");
+    filterBtns.forEach(function (b) { b.setAttribute("aria-pressed", String(b.classList.contains("active"))); });
     filterBtns.forEach(function (btn) {
       btn.addEventListener("click", function () {
-        filterBtns.forEach(function (b) { b.classList.remove("active"); });
+        filterBtns.forEach(function (b) {
+          b.classList.remove("active");
+          b.setAttribute("aria-pressed", "false");
+        });
         btn.classList.add("active");
+        btn.setAttribute("aria-pressed", "true");
 
         var filter = btn.getAttribute("data-filter");
         reviewCards.forEach(function (card) {

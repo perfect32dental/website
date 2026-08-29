@@ -232,17 +232,15 @@ section{padding:clamp(3.5rem,8vw,6.5rem) 0}
 .doc-reg{font-size:.8rem;color:var(--ink-3)}
 
 /* Reviews ---------------------------------------------------------------- */
-.review{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:1.75rem;
-  display:flex;flex-direction:column;gap:1rem}
 .stars{display:flex;gap:.15rem;color:#f5a623}
 .stars svg{width:1.05rem;height:1.05rem}
-.review blockquote{margin:0;font-size:1.02rem;color:var(--ink-2);line-height:1.6}
-.review footer{display:flex;align-items:center;gap:.75rem;margin-top:auto;
+.review-card blockquote{margin:0;font-size:1.02rem;color:var(--ink-2);line-height:1.6}
+.review-card footer{display:flex;align-items:center;gap:.75rem;margin-top:auto;
   border-top:1px solid var(--line-2);padding-top:1rem}
 .avatar{width:42px;height:42px;border-radius:50%;background:var(--navy-100);color:var(--navy-800);
   display:grid;place-items:center;font-weight:700;flex:none}
-.review cite{font-style:normal;font-weight:650;display:block;font-size:.95rem}
-.review small{color:var(--ink-3);font-size:.8rem}
+.review-card cite{font-style:normal;font-weight:650;display:block;font-size:.95rem}
+.review-card small{color:var(--ink-3);font-size:.8rem}
 
 /* Gallery ---------------------------------------------------------------- */
 .gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem}
