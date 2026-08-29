@@ -211,4 +211,117 @@
     box.addEventListener("click", function (e) { if (e.target !== boxImg) close(); });
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
   }
+
+  /* --- Before & After Comparison Slider ---------------------------------- */
+  var baSlider = $(".ba-slider"), baWrap = $(".ba-img-before-wrap"), baHandle = $(".ba-handle");
+  if (baSlider && baWrap && baHandle) {
+    var isDragging = false;
+    var setSliderPos = function (pct) {
+      pct = Math.max(0, Math.min(100, pct));
+      baWrap.style.width = pct + "%";
+      baHandle.style.left = pct + "%";
+    };
+
+    var updateFromEvent = function (e) {
+      var rect = baSlider.getBoundingClientRect();
+      var clientX = e.touches && e.touches[0] ? e.touches[0].clientX : e.clientX;
+      var pos = ((clientX - rect.left) / rect.width) * 100;
+      setSliderPos(pos);
+    };
+
+    baSlider.addEventListener("mousedown", function (e) {
+      isDragging = true;
+      updateFromEvent(e);
+    });
+    window.addEventListener("mousemove", function (e) {
+      if (!isDragging) return;
+      updateFromEvent(e);
+    });
+    window.addEventListener("mouseup", function () { isDragging = false; });
+
+    baSlider.addEventListener("touchstart", function (e) {
+      isDragging = true;
+      updateFromEvent(e);
+    }, { passive: true });
+    window.addEventListener("touchmove", function (e) {
+      if (!isDragging) return;
+      updateFromEvent(e);
+    }, { passive: true });
+    window.addEventListener("touchend", function () { isDragging = false; });
+
+    // Keyboard support
+    baSlider.setAttribute("tabindex", "0");
+    baSlider.setAttribute("role", "slider");
+    baSlider.setAttribute("aria-label", "Before and after comparison slider");
+    baSlider.addEventListener("keydown", function (e) {
+      var currentPct = parseFloat(baHandle.style.left) || 50;
+      if (e.key === "ArrowLeft") { setSliderPos(currentPct - 5); e.preventDefault(); }
+      else if (e.key === "ArrowRight") { setSliderPos(currentPct + 5); e.preventDefault(); }
+    });
+
+    // Case Tabs Switching
+    var baTabs = $$(".ba-tab");
+    baTabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        baTabs.forEach(function (t) { t.classList.remove("active"); });
+        tab.classList.add("active");
+
+        var beforeSrc = tab.getAttribute("data-before");
+        var afterSrc = tab.getAttribute("data-after");
+        var title = tab.getAttribute("data-title");
+        var desc = tab.getAttribute("data-desc");
+        var tag = tab.getAttribute("data-tag");
+
+        var imgBefore = $(".ba-img-before");
+        var imgAfter = $(".ba-img-after");
+        var metaTitle = $(".ba-meta-title");
+        var metaDesc = $(".ba-meta-desc");
+        var metaTag = $(".ba-case-tag");
+
+        if (imgBefore && beforeSrc) imgBefore.src = beforeSrc;
+        if (imgAfter && afterSrc) imgAfter.src = afterSrc;
+        if (metaTitle && title) metaTitle.textContent = title;
+        if (metaDesc && desc) metaDesc.textContent = desc;
+        if (metaTag && tag) metaTag.textContent = tag;
+
+        setSliderPos(50);
+      });
+    });
+  }
+
+  /* --- Reviews Carousel --------------------------------------------------- */
+  var reviewsTrack = $(".reviews-track");
+  var prevBtn = $("#reviewsPrev"), nextBtn = $("#reviewsNext");
+  if (reviewsTrack) {
+    if (prevBtn) {
+      prevBtn.addEventListener("click", function () {
+        reviewsTrack.scrollBy({ left: -340, behavior: "smooth" });
+      });
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener("click", function () {
+        reviewsTrack.scrollBy({ left: 340, behavior: "smooth" });
+      });
+    }
+
+    // Review Filters
+    var filterBtns = $$(".review-filter-btn");
+    var reviewCards = $$(".review-card");
+    filterBtns.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        filterBtns.forEach(function (b) { b.classList.remove("active"); });
+        btn.classList.add("active");
+
+        var filter = btn.getAttribute("data-filter");
+        reviewCards.forEach(function (card) {
+          if (filter === "all" || card.getAttribute("data-category") === filter) {
+            card.style.display = "flex";
+          } else {
+            card.style.display = "none";
+          }
+        });
+        reviewsTrack.scrollTo({ left: 0, behavior: "smooth" });
+      });
+    });
+  }
 })();

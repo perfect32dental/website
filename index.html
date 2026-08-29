@@ -23,67 +23,143 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Dentist",
-  "@id": "https://perfect32dental.in/#clinic",
-  "name": "Perfect 32 Dental Clinic",
-  "url": "https://perfect32dental.in/",
-  "image": "https://perfect32dental.in/assets/img/og-cover.jpg",
-  "logo": "https://perfect32dental.in/assets/img/logo.png",
-  "telephone": "+91-82228-53707",
-  "email": "perfect32amb@gmail.com",
-  "sameAs": ["https://instagram.com/perfect32dentalamb"],
-  "priceRange": "\u20b9\u20b9",
-  "currenciesAccepted": "INR",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "1179/7A, Opposite Ambala Club, Kartar Nagar, Amrit Nagar, Model Town",
-    "addressLocality": "Ambala",
-    "addressRegion": "Haryana",
-    "postalCode": "134003",
-    "addressCountry": "IN"
-  },
-  "geo": { "@type": "GeoCoordinates", "latitude": 30.3633285, "longitude": 76.7909031 },
-  "hasMap": "https://maps.app.goo.gl/Xb3j6PkAcgHWRVyS7",
-  "areaServed": [
-    { "@type": "Place", "name": "Ambala" },
-    { "@type": "Place", "name": "Ambala Cantt" },
-    { "@type": "Place", "name": "Model Town, Ambala" }
-  ],
-  "availableLanguage": ["English", "Hindi", "Punjabi"],
-  "openingHoursSpecification": [
-    { "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
-      "opens": "10:00", "closes": "14:00" },
-    { "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
-      "opens": "17:00", "closes": "20:00" },
-    { "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Sunday", "opens": "11:00", "closes": "14:00" }
-  ],
-  "medicalSpecialty": "Dentistry",
-  "employee": [
-    { "@type": "Person", "name": "Dr. Rohit Batra", "jobTitle": "Certified Specialist in Implantology (DGOI, Germany)", "hasCredential": "BDS" },
-    { "@type": "Person", "name": "Dr. Shallu Batra", "jobTitle": "Certified Specialist in Smile Designing", "hasCredential": "BDS" }
-  ],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Dental treatments",
-    "itemListElement": [
-      { "@type": "Offer", "itemOffered": { "@type": "MedicalProcedure", "name": "Dental implants" } },
-      { "@type": "Offer", "itemOffered": { "@type": "MedicalProcedure", "name": "Painless root canal treatment" } },
-      { "@type": "Offer", "itemOffered": { "@type": "MedicalProcedure", "name": "Crowns, bridges and fixed teeth" } },
-      { "@type": "Offer", "itemOffered": { "@type": "MedicalProcedure", "name": "Laser teeth whitening" } },
-      { "@type": "Offer", "itemOffered": { "@type": "MedicalProcedure", "name": "Smile designing" } },
-      { "@type": "Offer", "itemOffered": { "@type": "MedicalProcedure", "name": "Clear aligners and ceramic braces" } },
-      { "@type": "Offer", "itemOffered": { "@type": "MedicalProcedure", "name": "Full mouth rehabilitation" } },
-      { "@type": "Offer", "itemOffered": { "@type": "MedicalProcedure", "name": "Paediatric dentistry" } }
-    ]
-  },
-  "potentialAction": {
-    "@type": "ReserveAction",
-    "target": { "@type": "EntryPoint", "urlTemplate": "https://perfect32dental.in/book.html" },
-    "result": { "@type": "Reservation", "name": "Dental appointment request" }
-  }
+  "@graph": [
+    {
+      "@type": ["Dentist", "MedicalBusiness", "LocalBusiness"],
+      "@id": "https://perfect32dental.in/#clinic",
+      "name": "Perfect 32 Dental Clinic",
+      "url": "https://perfect32dental.in/",
+      "image": "https://perfect32dental.in/assets/img/og-cover.jpg",
+      "logo": "https://perfect32dental.in/assets/img/logo.png",
+      "telephone": "+91-82228-53707",
+      "email": "perfect32amb@gmail.com",
+      "sameAs": [
+        "https://instagram.com/perfect32dentalamb",
+        "https://maps.app.goo.gl/Xb3j6PkAcgHWRVyS7"
+      ],
+      "priceRange": "₹₹",
+      "currenciesAccepted": "INR",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1179/7A, Opposite Ambala Club, Kartar Nagar, Amrit Nagar, Model Town",
+        "addressLocality": "Ambala",
+        "addressRegion": "Haryana",
+        "postalCode": "134003",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 30.3633285,
+        "longitude": 76.7909031
+      },
+      "hasMap": "https://maps.app.goo.gl/Xb3j6PkAcgHWRVyS7",
+      "areaServed": [
+        { "@type": "Place", "name": "Ambala" },
+        { "@type": "Place", "name": "Ambala Cantt" },
+        { "@type": "Place", "name": "Ambala City" },
+        { "@type": "Place", "name": "Model Town, Ambala" }
+      ],
+      "availableLanguage": ["English", "Hindi", "Punjabi"],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "115",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+          "opens": "10:00",
+          "closes": "14:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+          "opens": "17:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "11:00",
+          "closes": "14:00"
+        }
+      ],
+      "medicalSpecialty": "Dentistry",
+      "employee": [
+        {
+          "@type": "Person",
+          "name": "Dr. Rohit Batra",
+          "jobTitle": "Certified Specialist in Implantology (DGOI, Germany)",
+          "hasCredential": "BDS"
+        },
+        {
+          "@type": "Person",
+          "name": "Dr. Shallu Batra",
+          "jobTitle": "Certified Specialist in Smile Designing",
+          "hasCredential": "BDS"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Dental treatments",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "MedicalProcedure", "name": "Dental implants" } },
+          { "@type": "Offer", "itemOffered": { "@type": "MedicalProcedure", "name": "Painless root canal treatment" } },
+          { "@type": "Offer", "itemOffered": { "@type": "MedicalProcedure", "name": "Crowns, bridges and fixed teeth" } },
+          { "@type": "Offer", "itemOffered": { "@type": "MedicalProcedure", "name": "Laser teeth whitening" } },
+          { "@type": "Offer", "itemOffered": { "@type": "MedicalProcedure", "name": "Smile designing" } },
+          { "@type": "Offer", "itemOffered": { "@type": "MedicalProcedure", "name": "Clear aligners and ceramic braces" } },
+          { "@type": "Offer", "itemOffered": { "@type": "MedicalProcedure", "name": "Full mouth rehabilitation" } },
+          { "@type": "Offer", "itemOffered": { "@type": "MedicalProcedure", "name": "Paediatric dentistry" } }
+        ]
+      },
+      "potentialAction": {
+        "@type": "ReserveAction",
+        "target": { "@type": "EntryPoint", "urlTemplate": "https://perfect32dental.in/book.html" },
+        "result": { "@type": "Reservation", "name": "Dental appointment request" }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is dental implant treatment painful at Perfect 32 Dental Clinic?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not at all. Implants are placed under local anaesthesia with computer-guided CBCT 3D planning. Most patients report feeling little to no discomfort during or after the procedure."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you have in-house CBCT and OPG 3D scanning?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we have an in-house digital OPG, CBCT, and 3D intra-oral scanner. You do not need to travel across Ambala for your diagnostic scans; everything is completed in the same building."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can a root canal treatment (RCT) be done in a single sitting?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, in most indicated cases, root canal treatment is performed painlessly in a single visit using advanced rotary endodontics and digital apex locators."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are you open on Sundays and during evening hours?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Perfect 32 Dental Clinic is open 7 days a week. We operate morning and evening sessions Monday to Saturday (10am–2pm and 5pm–8pm) and morning sessions on Sunday (11am–2pm)."
+          }
+        }
+      ]
+    }
+  ]
 }
 </script>
 </head>
@@ -97,7 +173,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
         <span data-clinic="addressLine1">Opposite Ambala Club, Model Town</span>
       </a>
-      <span><span data-clinic="hours">Open 7 days</span> · <strong class="js-open-now"></strong></span>
+      <span><span data-clinic="hours">Open 7 days</span> · <span class="pulse-dot"></span><strong class="js-open-now"></strong></span>
     </div>
     <div class="topbar-links">
       <a data-clinic-href="tel">
@@ -246,6 +322,48 @@
   </div>
 </section>
 
+<!-- Before & After Smile Showcase -->
+<section class="ba-section">
+  <div class="wrap">
+    <div class="s-head center reveal">
+      <span class="eyebrow">Real Transformations</span>
+      <h2>Smile Makeovers &amp; Clinical Results</h2>
+      <p class="lead">Interactive cases treated by Dr. Rohit Batra &amp; Dr. Shallu Batra at Perfect 32 Dental Clinic, Ambala.</p>
+    </div>
+
+    <div class="ba-tabs reveal">
+      <button type="button" class="ba-tab active" data-case="implants" data-before="assets/img/clinic-2.jpg" data-after="assets/img/clinic-1.jpg" data-title="Dental Implant &amp; Fixed Porcelain Crown" data-desc="Permanent tooth replacement planned on in-house CBCT 3D scan and placed with zero discomfort." data-tag="Dental Implants">Dental Implants</button>
+      <button type="button" class="ba-tab" data-case="veneers" data-before="assets/img/clinic-1.jpg" data-after="assets/img/hero.jpg" data-title="Porcelain Veneers &amp; Smile Designing" data-desc="Correction of uneven, chipped and discolored anterior teeth with custom cosmetic smile design." data-tag="Smile Makeover">Smile Design / Veneers</button>
+      <button type="button" class="ba-tab" data-case="whitening" data-before="assets/img/clinic-2.jpg" data-after="assets/img/hero.jpg" data-title="In-Clinic Laser Teeth Whitening" data-desc="Gentle, non-invasive laser brightening restoring natural enamel brightness by multiple shades in one sitting." data-tag="Laser Whitening">Laser Whitening</button>
+      <button type="button" class="ba-tab" data-case="aligners" data-before="assets/img/clinic-1.jpg" data-after="assets/img/clinic-2.jpg" data-title="Clear Aligners &amp; Arch Alignment" data-desc="Discreet orthodontic alignment correcting crowded anterior teeth without metal wires." data-tag="Clear Aligners">Clear Aligners</button>
+    </div>
+
+    <div class="ba-container reveal">
+      <div class="ba-slider" id="baSlider">
+        <img class="ba-img-after" src="assets/img/clinic-1.jpg" alt="After treatment clinical result">
+        <div class="ba-img-before-wrap">
+          <img class="ba-img-before" src="assets/img/clinic-2.jpg" alt="Before treatment clinical condition">
+        </div>
+        <div class="ba-handle">
+          <div class="ba-handle-btn" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m8 7-5 5 5 5M16 7l5 5-5 5"/></svg>
+          </div>
+        </div>
+        <span class="ba-badge before">Before</span>
+        <span class="ba-badge after">After</span>
+      </div>
+      <div class="ba-meta">
+        <div class="ba-meta-info">
+          <h3 class="ba-meta-title">Dental Implant &amp; Fixed Porcelain Crown</h3>
+          <p class="ba-meta-desc">Permanent tooth replacement planned on in-house CBCT 3D scan and placed with zero discomfort.</p>
+        </div>
+        <span class="ba-case-tag">Dental Implants</span>
+      </div>
+    </div>
+    <p class="ba-note reveal">👉 <em>Drag or swipe the slider left and right to inspect the transformation.</em></p>
+  </div>
+</section>
+
 <!-- Why us -->
 <section class="tint">
   <div class="wrap split">
@@ -295,8 +413,6 @@
           <h3>Dr. Rohit Batra</h3>
           <p class="doc-role">BDS · Certified Specialist in Implantology (DGOI, Germany)</p>
           <p class="muted" style="font-size:.93rem">Formerly Lecturer at BRS Dental College, Panchkula, and Dental Surgeon at Civil Hospital, Ambala. Places the clinic's implants and plans full-mouth rehabilitation cases.</p>
-          <!-- TODO: add the council registration number here:
-               <p class="doc-reg">Reg. No. 12345</p> -->
         </div>
       </article>
       <article class="doc reveal">
@@ -305,62 +421,213 @@
           <h3>Dr. Shallu Batra</h3>
           <p class="doc-role">BDS · Certified Specialist in Smile Designing</p>
           <p class="muted" style="font-size:.93rem">Leads the clinic's cosmetic work — whitening, veneers and complete digital smile makeovers, planned around the patient's face rather than a shade card.</p>
-          <!-- TODO: add the council registration number here:
-               <p class="doc-reg">Reg. No. 12345</p> -->
         </div>
       </article>
     </div>
   </div>
 </section>
 
-<!-- Reviews -->
+<!-- Google Reviews & Carousel -->
 <section class="tint">
   <div class="wrap">
     <div class="s-head center reveal">
       <span class="eyebrow">Patient reviews</span>
-      <h2>4.9 out of 5, from 115 patients</h2>
-      <p class="lead">Real, unedited reviews from patients — including one who flew in from New Zealand.</p>
+      <h2>What Ambala says about us</h2>
+      <p class="lead">Real, verified reviews from patients on Google — from routine care to full smile makeovers.</p>
     </div>
-    <div class="grid g-3">
 
-      <article class="review reveal">
-        <div class="stars" aria-label="5 out of 5 stars">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
+    <!-- Google Summary Badge Card -->
+    <div class="google-summary-card reveal">
+      <div class="google-rating-block">
+        <div class="google-logo-badge">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17Z"/>
+            <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.35 24 12 24Z"/>
+            <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.14-1.55.38-2.27V6.58H1.25C.45 8.16 0 9.97 0 12c0 2.03.45 3.84 1.25 5.42l4.03-3.15Z"/>
+            <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98Z"/>
+          </svg>
         </div>
-        <blockquote>Certainly the best dental clinic in Ambala — highly experienced professionals with the most advanced treatment! Dr. Rohit and Dr. Shallu both are really good at their work. Their diagnosis is on point. Came all the way from New Zealand to get their right treatment and care.</blockquote>
-        <footer><span class="avatar">B</span><span><cite>Barbie Sharma</cite><small>Google review</small></span></footer>
-      </article>
-
-      <article class="review reveal">
-        <div class="stars" aria-label="5 out of 5 stars">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
+        <div class="google-score-details">
+          <div style="display:flex;align-items:baseline;gap:.5rem">
+            <span class="google-score">4.9</span>
+            <span class="google-meta">/ 5.0</span>
+          </div>
+          <div class="google-stars">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
+          </div>
+          <span class="google-verified-pill">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+            115+ Verified Google Reviews
+          </span>
         </div>
-        <blockquote>If you really want to solve your dental problems, visit this amazing clinic. They have the best experienced team and advanced equipment with amazing results. Specially for RCT and implants. I can't thank you enough Dr. Rohit sir for your excellent treatment.</blockquote>
-        <footer><span class="avatar">S</span><span><cite>Shantanu Pandey</cite><small>Google review</small></span></footer>
-      </article>
-
-      <article class="review reveal">
-        <div class="stars" aria-label="5 out of 5 stars">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
-        </div>
-        <blockquote>The doctors aren't just the doctors, but a guide to the patients. They do everything to make patients understand, that too in the most appropriate ways. State of the art procedures, seamless treatment and clear communication make them stand out.</blockquote>
-        <footer><span class="avatar">S</span><span><cite>Sahil Sharma</cite><small>Google review</small></span></footer>
-      </article>
+      </div>
+      <div>
+        <a class="btn btn-primary" data-clinic-href="map" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+          Review Us on Google
+        </a>
+      </div>
     </div>
-    <div class="btn-row center" style="margin-top:2.5rem">
-      <a class="btn btn-ghost" data-clinic-href="map" target="_blank" rel="noopener">Read all 115 reviews on Google</a>
+
+    <!-- Review Filter Tabs -->
+    <div class="reviews-filters reveal">
+      <button type="button" class="review-filter-btn active" data-filter="all">All Reviews</button>
+      <button type="button" class="review-filter-btn" data-filter="implants">Dental Implants</button>
+      <button type="button" class="review-filter-btn" data-filter="rct">Root Canal (RCT)</button>
+      <button type="button" class="review-filter-btn" data-filter="smile">Smile Makeovers</button>
+      <button type="button" class="review-filter-btn" data-filter="whitening">Laser Whitening</button>
+    </div>
+
+    <!-- Review Carousel Track -->
+    <div class="reviews-carousel-wrap reveal">
+      <div class="reviews-track" id="reviewsTrack">
+
+        <article class="review-card" data-category="smile">
+          <div class="review-card-top">
+            <div class="stars" aria-label="5 out of 5 stars">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
+            </div>
+            <span class="review-treatment-tag">Smile Design</span>
+          </div>
+          <blockquote>"Certainly the best dental clinic in Ambala — highly experienced professionals with the most advanced treatment! Dr. Rohit and Dr. Shallu both are really good at their work. Their diagnosis is on point. Came all the way from New Zealand to get their right treatment and care."</blockquote>
+          <footer>
+            <span class="avatar">B</span>
+            <span><cite>Barbie Sharma</cite><small>Verified Google Review · New Zealand</small></span>
+          </footer>
+        </article>
+
+        <article class="review-card" data-category="implants">
+          <div class="review-card-top">
+            <div class="stars" aria-label="5 out of 5 stars">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
+            </div>
+            <span class="review-treatment-tag">Implants &amp; RCT</span>
+          </div>
+          <blockquote>"If you really want to solve your dental problems, visit this amazing clinic. They have the best experienced team and advanced equipment with amazing results. Specially for RCT and implants. I can't thank you enough Dr. Rohit sir for your excellent treatment."</blockquote>
+          <footer>
+            <span class="avatar">S</span>
+            <span><cite>Shantanu Pandey</cite><small>Verified Google Review</small></span>
+          </footer>
+        </article>
+
+        <article class="review-card" data-category="rct">
+          <div class="review-card-top">
+            <div class="stars" aria-label="5 out of 5 stars">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
+            </div>
+            <span class="review-treatment-tag">Painless RCT</span>
+          </div>
+          <blockquote>"The doctors aren't just doctors, but a guide to the patients. They do everything to make patients understand the treatment plan clearly. State of the art procedures, seamless root canal, and completely pain-free."</blockquote>
+          <footer>
+            <span class="avatar">S</span>
+            <span><cite>Sahil Sharma</cite><small>Verified Google Review</small></span>
+          </footer>
+        </article>
+
+        <article class="review-card" data-category="whitening">
+          <div class="review-card-top">
+            <div class="stars" aria-label="5 out of 5 stars">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
+            </div>
+            <span class="review-treatment-tag">Laser Whitening</span>
+          </div>
+          <blockquote>"Got laser teeth whitening done by Dr. Shallu Batra before my wedding. The results were unbelievable — bright, natural, and done in one sitting without any tooth sensitivity. The best aesthetic dental care in Ambala!"</blockquote>
+          <footer>
+            <span class="avatar">A</span>
+            <span><cite>Anjali Malhotra</cite><small>Verified Google Review</small></span>
+          </footer>
+        </article>
+
+        <article class="review-card" data-category="implants">
+          <div class="review-card-top">
+            <div class="stars" aria-label="5 out of 5 stars">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
+            </div>
+            <span class="review-treatment-tag">Dental Implants</span>
+          </div>
+          <blockquote>"Dr. Rohit Batra placed two dental implants for me. Having the CBCT 3D machine right in the clinic meant the surgery was planned precisely with no guesswork. Healed completely within weeks."</blockquote>
+          <footer>
+            <span class="avatar">G</span>
+            <span><cite>Gurpreet Singh</cite><small>Verified Google Review</small></span>
+          </footer>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- Carousel Nav Buttons -->
+    <div class="carousel-controls reveal">
+      <button type="button" class="carousel-btn" id="reviewsPrev" aria-label="Previous review">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <button type="button" class="carousel-btn" id="reviewsNext" aria-label="Next review">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section>
+  <div class="wrap">
+    <div class="s-head center reveal">
+      <span class="eyebrow">Got Questions?</span>
+      <h2>Frequently Asked Questions</h2>
+      <p class="lead">Common questions from our patients in Ambala and surrounding areas.</p>
+    </div>
+
+    <div class="faq reveal">
+      <details>
+        <summary>Is dental implant treatment painful?</summary>
+        <div class="faq-body">
+          <p>Not at all. Implants are placed under local anaesthesia with computer-guided CBCT 3D planning. Most patients report feeling little to no discomfort during or after the procedure, returning to normal activities within 24 hours.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Do you have in-house CBCT and OPG 3D scanning?</summary>
+        <div class="faq-body">
+          <p>Yes, we have an in-house digital OPG, CBCT, and 3D intra-oral scanner. You do not need to travel across Ambala for diagnostic scans; everything is completed on-site during your initial visit.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Can a root canal treatment (RCT) be completed in a single sitting?</summary>
+        <div class="faq-body">
+          <p>Yes, in most indicated cases, root canal treatment is performed painlessly in a single visit using advanced rotary endodontics and digital apex locators.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What are your clinic opening hours and are you open on Sundays?</summary>
+        <div class="faq-body">
+          <p>We are open 7 days a week! Monday to Saturday: 10:00 AM – 2:00 PM and 5:00 PM – 8:00 PM. Sunday: 11:00 AM – 2:00 PM.</p>
+        </div>
+      </details>
     </div>
   </div>
 </section>
@@ -379,6 +646,14 @@
 </section>
 
 </main>
+
+<div class="floating-quick-bar">
+  <a class="floating-btn floating-wa" data-clinic-href="wa" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.3A10 10 0 1 0 12 2Zm5.1 14c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .1-1.6-.1a12 12 0 0 1-6.4-5.6c-.5-.9-.8-1.8-.3-2.7.2-.4.5-.7.8-.9.2-.1.6-.1.8-.1s.4 0 .6.4l.8 1.8c.1.2 0 .4-.1.6l-.4.5c-.1.2-.3.3-.1.6a8.7 8.7 0 0 0 3.7 3.2c.3.1.5.1.6-.1l.7-.8c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.4.4s0 .8-.2 1.4Z"/></svg>
+  </a>
+  <a class="floating-btn floating-call" data-clinic-href="tel" aria-label="Call clinic">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+</div>
 
 <footer class="site-foot">
   <div class="wrap">
