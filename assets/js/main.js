@@ -219,7 +219,9 @@
     var isDragging = false;
     var setSliderPos = function (pct) {
       pct = Math.max(0, Math.min(100, pct));
-      baWrap.style.width = pct + "%";
+      /* Clip the full-size before layer rather than resizing it — resizing
+         scales the image with the wrapper and looks like a zoom. */
+      baWrap.style.clipPath = "inset(0 " + (100 - pct) + "% 0 0)";
       baHandle.style.left = pct + "%";
       baSlider.setAttribute("aria-valuenow", Math.round(pct));
     };

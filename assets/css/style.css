@@ -455,20 +455,20 @@ fieldset{border:none;margin:0 0 1.15rem;padding:0}
   display: block;
   pointer-events: none;
 }
+/* The before layer stays FULL SIZE and is revealed by clipping, so the image
+   never moves or rescales as the handle is dragged. Sizing the wrapper to a
+   percentage instead makes its child image shrink with it, which reads as the
+   photo zooming rather than a wipe. */
 .ba-img-before-wrap {
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 50%;
-  overflow: hidden;
+  inset: 0;
   z-index: 2;
   pointer-events: none;
+  clip-path: inset(0 50% 0 0);
 }
 .ba-img-before-wrap .ba-img-before {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   height: 100%;
   width: 100%;
   max-width: none;
